@@ -4,23 +4,27 @@
 
 (function() {
 
-  //requirejs.config({
-  //  baseUrl: "./",
-  //  paths: {
-  //    jquery: "lib/jquery/dist/jquery.min",
-  //    underscore: "lib/underscore/underscore-min"
-  //  }
-  //});
+  require.config({
+   baseUrl: "./",
+   paths: {
+     jquery: "lib/jquery/dist/jquery.min",
+     underscore: "lib/underscore/underscore-min"
+   },
 
-  define("main", [
-    "lib/jquery/dist/jquery.min"], function($) {
-    var data = (document.getElementById("require") || document.body).dataset,
-        component = data.component || "";
-
-    console.log($);
-
-    requirejs([component]);
-
+   "shim": {
+     "lib/jquery/dist/jquery.min": {
+      "exports": "$"
+     },
+     "lib/underscore/underscore-min": {
+      "exports": "_"
+     }
+   }
   });
+
+  require(['test'], function(test) {
+    
+    console.log(test.hello("my Lord"));
+  });
+
 
 })();
