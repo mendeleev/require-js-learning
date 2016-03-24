@@ -1,3 +1,136 @@
-# require-js-learning
-require js learning project
-for RIA.com school
+### Install project
+Клонуємо
+``` bash
+$ git clone https://github.com/mendeleev/require-js-learning.git
+```
+
+Встановлюємо необхідні модулі та бібліотеки:
+``` bash
+$ npm install -g bower
+$ npm install -g requirejs
+
+$ cd your_path/require-js-learning
+$ bower install
+```
+
+Запускаємо оптимізатор (певна річ перш ніж його запустити, потрібно зробити всі необхідні налаштування для збірки)
+``` bash
+$ r.js -o your_path/build.js
+```
+
+
+## "RequireJS & JQuery" home task
+Домашнє завдання по лекції "RequireJS & JQuery" [Minions Clicker](http://mendeleev.github.io/minions/app/)
+
+### Суть завдання
+Отже в нас є прототип веб-додатку, який демонструє як саме це повинно працювати. Тепер з цього потрібно зробити більш робочий і динамічний проект. Перш за все це підвантаження даних. На реальному проекті, дані постійно змінюються і нам потрібно підготуватись до того, щоб інформація яку ми відображаємо була актуальною. Припустимо, що дані нам повинен віддавати якийсь **backend**, розробкою якого займається програміст John. Але ми не можемо і не повинні чекати поки John розбереться зі своєю частиною роботи, тому розробку клієнтської частини ми виконуємо незалежно.
+
+### Формат даних
+Початковий формат даних які ми очікуємо, відомий, а тому ми можемо створити звичайний .json файл, і заповнити його будь-якими тестовими даними, який буде лежати прямо в проекті.
+
+```json
+[
+	{
+		"id":1,
+		"title": "Cake",
+		"image": "Minion-Cake-icon.png",
+		"count": 0
+	},
+	{
+		"id":2,
+		"title": "Curious",
+		"image": "Minion-Curious-icon.png",
+		"count": 0
+	}
+]
+```
+
+### Завантаження даних
+На щастя, JQuery однаково добре вміє витягувати дані, і з бекенду, і з файлу. Тому, нам цілком достатньо буде функції $.ajax(), почитати про яку можна [тут](http://devdocs.io/jquery/jquery.ajax). Також не варто забувати, що в секції **Ajax** є й [інші корисні штуки](http://devdocs.io/jquery-ajax/), які можливо підійдуть краще.   
+
+``` javascript
+$.ajax({
+	url: "files/data.json",
+	dataType: "json",
+	success: function(data) {
+		//do smth
+	},
+	error: function(error) {
+		//houston we have a problem
+	}
+});
+```
+
+Також нагадаю, що ця штука повертає [проміс](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Promise) і замість **success/error** можна використовувати .**then()** чи **.done()**
+
+```javascript
+function getData() {
+	return $.ajax({
+		url: "files/data.json",
+		dataType: "json"
+	});
+}
+
+getData().done(function(data) {
+	//do smth
+}, function(error) {
+	//do smth if error
+});
+```
+
+### Візуалізація
+Приступаємо до мабуть найцікавішої частини, а саме, відмальовки отриманих даних. Тут нам знадобляться такі розділи як:
+
+ - [Селектори (selectors)](http://devdocs.io/jquery-selectors/)
+ - [Бродяги (traversing)](http://devdocs.io/jquery-traversing/)
+ - [Маніпуляції (manipulations)](http://devdocs.io/jquery-manipulation/)
+ - [Події (events)](http://devdocs.io/jquery-events/)
+
+За допомогою JQuery можна не лише тягнути елементи зі сторінки, але можна також створювати нові. Наприклад: 
+
+``` javascript
+var $headline = $("<h1>Hello, World!</h1>")
+$("body").append($headline)
+```
+
+### Шаблон
+На даному етапі в нас є верстка галереї, в якій знаходиться шаблон для одного елементу:
+``` html
+<li class="item">
+	<img src="images/Minion-Curious-icon.png" alt="Curious" />
+	<span class="counter">0</span>
+</li>
+```
+
+Всі елементи складаються в контейнер: 
+``` html
+<ul class="gallery"></ul>
+```
+
+### Модулі
+Для того, щоб нам було зручно підтримувати і тестувати написаний код, розкладаємо все на модулі за допомогою бібліотеки [RequireJS](http://requirejs.org/docs/start.html).
+
+### Build
+Отже, все готово, залишається тільки оптимізувати написані модулі, щоб весь код був мініфікований і можна було його використовувати в production версії. Детальніше можна почитати про це [тут](http://requirejs.org/docs/optimization.html).
+
+Також для прикладу я накидав певну структуру і налаштував збірку. Щоб подивитись як це виглядає потрібно переключитись на гілку **build**. Але для кращого засвоєння і щоб розібратись як працює цей механізм, дуже добре буде почати все з нуля, а сюди інколи підглядати якщо будуть виникати якісь нерозуміння.
+
+``` bash
+$ git checkout build
+```
+
+### Matherials
+Про всяк випадок залишу тут всі матеріали, які були задіяні під час лекції:
+
+ - [Презентація](https://docs.google.com/presentation/d/1RXJ0Wiis0HR4qm1xBrqTODOB3EBcJ79WtZ92Xue0gsQ/edit?usp=sharing)
+ - Приклади:
+	 - [багаторівневий список](https://jsfiddle.net/mendart/xj9cewux/4/)
+	 - [вимикач](https://jsfiddle.net/mendart/44enr2er/)
+	 - [фільтр](https://jsfiddle.net/mendart/0sLjg9jL/)
+ - Документація:
+	 - [офіційний сайт JQuery](https://jquery.com/)
+	 - [офіційний сайт RequireJS](http://requirejs.org/)
+	 - [збірка документацій | Devdocs](https://devdocs.io/)
+ - Література/Курси:
+	 - [книга «JQuery для початківців»](http://anton.shevchuk.name/jquery-book/),
+	 - [онлайн курс RequireJS](https://www.pluralsight.com/courses/requirejs-javascript-dependency-injection)
