@@ -46,6 +46,9 @@ Hit CTRL-C to stop the server
 
 У моєму випадку проект піднявся за адресою http://127.0.0.1:8081 та http://10.1.18.139:8081, у вас скоріш за все буде інша. Відкриваємо проект за цією адресою і проблема зникне.
 
+### Requirements
+- не використовуємо EcmaScript 6, стараємось щоб проект працював у максимальній кількості браузерів
+
 
 ## "RequireJS & JQuery" home task
 Домашнє завдання по лекції "RequireJS & JQuery" [Minions Clicker](http://mendeleev.github.io/minions/app/)
