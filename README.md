@@ -18,8 +18,9 @@ $ bower install
 $ r.js -o your_path/build.js
 ```
 
-### Troubleshooting
-При спробі витягнути і прочитати файл з проекту може виникати така помилка:
+## Troubleshooting
+
+#### При спробі витягнути і прочитати файл з проекту може виникати така помилка:
 ```
 Loading local file via ajax doesn't work in Chrome browser (security restrictions) (tested in Version 49.0.2623.87)
 Error - "Cross origin requests are only supported for protocol schemes: http, data, chrome, chrome-extension, https, chrome-extension-resource."
@@ -43,7 +44,8 @@ Available on:
 Hit CTRL-C to stop the server
 ```
 
-Після того як ви в браузері відкриєте проект, ця проблема зникне.
+У моєму випадку проект піднявся за адресою http://127.0.0.1:8081 та http://10.1.18.139:8081, у вас скоріш за все буде інша. Відкриваємо проект за цією адресою і проблема зникне.
+
 
 ## "RequireJS & JQuery" home task
 Домашнє завдання по лекції "RequireJS & JQuery" [Minions Clicker](http://mendeleev.github.io/minions/app/)
