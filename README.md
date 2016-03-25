@@ -18,6 +18,32 @@ $ bower install
 $ r.js -o your_path/build.js
 ```
 
+### Troubleshooting
+При спробі витягнути і прочитати файл з проекту може виникати така помилка:
+```
+Loading local file via ajax doesn't work in Chrome browser (security restrictions) (tested in Version 49.0.2623.87)
+Error - "Cross origin requests are only supported for protocol schemes: http, data, chrome, chrome-extension, https, chrome-extension-resource."
+```
+
+Тому проект краще запускати використовуючи локальний сервер. Найпростіший і найшвидший спосіб використати модуль [http-server](https://www.npmjs.com/package/http-server), який можна встановити із npm репозиторію.
+
+``` bash
+$ npm install -g http-server
+```
+
+Запускається дуже просто.
+``` bash
+$ cd project_path
+$ http-server ./
+
+Starting up http-server, serving ./
+Available on:
+  http:127.0.0.1:8081
+  http:10.1.18.139:8081
+Hit CTRL-C to stop the server
+```
+
+Після того як ви в браузері відкриєте проект, ця проблема зникне.
 
 ## "RequireJS & JQuery" home task
 Домашнє завдання по лекції "RequireJS & JQuery" [Minions Clicker](http://mendeleev.github.io/minions/app/)
