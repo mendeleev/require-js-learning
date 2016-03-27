@@ -2,9 +2,6 @@
   "name": "require",
   "description": "",
   "main": "index.js",
-  "authors": [
-    "Andrii Priadko"
-  ],
   "license": "ISC",
   "moduleType": [],
   "homepage": "",

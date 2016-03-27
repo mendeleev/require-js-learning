@@ -1,0 +1,6 @@
+After downloading:
+1. bower install
+2. r.js -o app/build.js
+
+Loading local file via ajax doesn't work in Chrome browser (security restrictions) (tested in Version 49.0.2623.87)
+Error - "Cross origin requests are only supported for protocol schemes: http, data, chrome, chrome-extension, https, chrome-extension-resource."

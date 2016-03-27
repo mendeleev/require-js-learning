@@ -1,0 +1,98 @@
+[
+  {
+    "id" : "0",
+    "img" : "Minion-Cake-icon.png",
+    "counter" : "0",
+    "nick" : "Cake"
+  },
+  {
+    "id" : "1",
+    "img" : "Minion-Curious-icon.png",
+    "counter" : "0",
+    "nick" : "Curious"
+  },
+  {
+    "id" : "2",
+    "img" : "Minion-Dancing-icon.png",
+    "counter" : "0",
+    "nick" : "Dancing"
+  },
+  {
+    "id" : "3",
+    "img" : "Minion-Evil-3-icon.png",
+    "counter" : "0",
+    "nick" : "Evil-3"
+  },
+  {
+    "id" : "4",
+    "img" : "Minion-Happy-icon.png",
+    "counter" : "0",
+    "nick" : "Happy"
+  },
+  {
+    "id" : "5",
+    "img" : "Minion-Girl-icon.png",
+    "counter" : "0",
+    "nick" : "Girl"
+  },
+  {
+    "id" : "6",
+    "img" : "Minion-Hello-icon.png",
+    "counter" : "0",
+    "nick" : "Hello"
+  },
+  {
+    "id" : "7",
+    "img" : "Minion-Kungfu-icon.png",
+    "counter" : "0",
+    "nick" : "Kungfu"
+  },
+  {
+    "id" : "8",
+    "img" : "Minion-Maid-icon.png",
+    "counter" : "0",
+    "nick" : "Maid"
+  },
+  {
+    "id" : "9",
+    "img" : "Minion-Shout-icon.png",
+    "counter" : "0",
+    "nick" : "Shout"
+  },
+  {
+    "id" : "10",
+    "img" : "Minion-Amazed-icon.png",
+    "counter" : "0",
+    "nick" : "Amazed"
+  },
+  {
+    "id" : "11",
+    "img" : "Minion-Bananas-icon.png",
+    "counter" : "0",
+    "nick" : "Bananas"
+  },
+  {
+    "id" : "12",
+    "img" : "Minion-Fruits-icon.png",
+    "counter" : "0",
+    "nick" : "Fruits"
+  },
+  {
+    "id" : "13",
+    "img" : "Minion-Reading-icon.png",
+    "counter" : "0",
+    "nick" : "Reading"
+  },
+  {
+    "id" : "14",
+    "img" : "Minion-Evil-icon.png",
+    "counter" : "0",
+    "nick" : "Evil"
+  },
+  {
+    "id" : "15",
+    "img" : "Minion-Playing-Golf-icon.png",
+    "counter" : "0",
+    "nick" : "Playing golf"
+  }
+]

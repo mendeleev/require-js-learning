@@ -1,19 +1,17 @@
 ({
     baseUrl: "./",
-    // generateSourceMaps: true,
-    // preserveLicenseComments:false,
-    appDir: "./scripts",
+    appDir: "./js",
     dir: "./build",
     paths: {
-     	jquery: "../lib/jquery/dist/jquery.min",
-     	underscore: "../lib/underscore/underscore-min"
-   	},
+        jquery: "../lib/jquery/dist/jquery.min",
+        require: "../lib/requirejs/require"
+    },
     wrapShim: true,
-    mainConfigFile: 'scripts/app.js',
+    mainConfigFile: 'js/app.js',
     modules: [
-      {
-        name: "modules/main",
-        exclude: ["jquery"]
-      }
+        {
+            name: "./modules/main",
+            exclude: ["jquery"]
+        }
     ]
 })
